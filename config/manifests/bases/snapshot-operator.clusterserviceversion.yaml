@@ -1,0 +1,55 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: snapshot-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: SnapshotPolicy is the Schema for the snapshotpolicies API
+      displayName: Snapshot Policy
+      kind: SnapshotPolicy
+      name: snapshotpolicies.storage.tuunit.com
+      version: v1alpha1
+  description: Operator for managing VolumeSnapshots by creating snapshot policies
+    with scheduling, retention and deletion settings.
+  displayName: Snapshot Operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - k8s
+  - volumes
+  - pvc
+  - pv
+  - volumesnapshots
+  - snapshots
+  - policies
+  links:
+  - name: Snapshot Operator
+    url: https://snapshot-operator.domain
+  maintainers:
+  - email: jan@larwig.com
+    name: Jan Larwig
+  maturity: alpha
+  provider:
+    name: tuunit
+    url: https://github.com/tuunit
+  version: 0.0.0

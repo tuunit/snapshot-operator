@@ -1,0 +1,31 @@
+# permissions for end users to edit snapshotpolicies.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: snapshotpolicy-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: snapshot-operator
+    app.kubernetes.io/part-of: snapshot-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: snapshotpolicy-editor-role
+rules:
+- apiGroups:
+  - storage.tuunit.com
+  resources:
+  - snapshotpolicies
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - storage.tuunit.com
+  resources:
+  - snapshotpolicies/status
+  verbs:
+  - get

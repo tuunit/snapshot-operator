@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - storage.tuunit.com
+  resources:
+  - snapshotpolicies
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - storage.tuunit.com
+  resources:
+  - snapshotpolicies/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - storage.tuunit.com
+  resources:
+  - snapshotpolicies/status
+  verbs:
+  - get
+  - patch
+  - update

@@ -1,0 +1,12 @@
+apiVersion: storage.tuunit.com/v1alpha1
+kind: SnapshotPolicy
+metadata:
+  labels:
+    app.kubernetes.io/name: snapshotpolicy
+    app.kubernetes.io/instance: snapshotpolicy-sample
+    app.kubernetes.io/part-of: snapshot-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: snapshot-operator
+  name: snapshotpolicy-sample
+spec:
+  # TODO(user): Add fields here
